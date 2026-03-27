@@ -1,0 +1,266 @@
+:root {
+  --bg: #0e1624;
+  --bg-soft: #141f33;
+  --card: #1f2d45;
+  --text: #f2f5fa;
+  --muted: #b8c0d1;
+  --accent: #f59e0b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: min(1120px, 92vw);
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(14, 22, 36, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #263551;
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.logo {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1.1rem;
+}
+
+.site-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.site-nav a:hover {
+  color: var(--accent);
+}
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid #33476c;
+  border-radius: 6px;
+  padding: 0.2rem 0.5rem;
+}
+
+.hero {
+  padding: 3.2rem 0 2rem;
+}
+
+.hero-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.hero-card {
+  background: linear-gradient(145deg, #1a2840, #132136);
+  border: 1px solid #2f4366;
+  border-radius: 14px;
+  padding: 1.3rem;
+}
+
+.eyebrow,
+.kicker {
+  margin: 0;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0.65rem;
+}
+
+.btn,
+.inline-link {
+  display: inline-block;
+  margin-top: 0.7rem;
+  color: var(--bg);
+  background: var(--accent);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.58rem 0.9rem;
+}
+
+.inline-link {
+  margin-top: 0;
+}
+
+.section {
+  padding: 3rem 0;
+}
+
+.alt {
+  background: var(--bg-soft);
+}
+
+.fleet-grid,
+.features-grid,
+.stats-grid,
+.clients-grid {
+  margin-top: 1.2rem;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.fleet-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.fleet-item,
+.features-grid article,
+.stats-grid article,
+.clients-grid div,
+.testimonials blockquote {
+  background: var(--card);
+  border: 1px solid #324868;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.fleet-item span {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.features-grid,
+.stats-grid,
+.clients-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.stats-grid strong {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+.clients-grid div {
+  text-align: center;
+  font-weight: 600;
+}
+
+.testimonials {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+blockquote {
+  margin: 0;
+  line-height: 1.6;
+}
+
+cite {
+  display: block;
+  margin-top: 0.8rem;
+  color: var(--muted);
+  font-style: normal;
+}
+
+.site-footer {
+  background: #0a111d;
+  padding: 2.4rem 0 1rem;
+  border-top: 1px solid #233554;
+}
+
+.footer-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.site-footer a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--accent);
+}
+
+.copyright {
+  margin: 1.2rem 0 0;
+  text-align: center;
+  color: #92a1bd;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 960px) {
+  .hero-grid,
+  .fleet-grid,
+  .features-grid,
+  .stats-grid,
+  .clients-grid,
+  .testimonials,
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 62px;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    background: #0d1729;
+    padding: 1rem;
+    border-bottom: 1px solid #2a3c5a;
+  }
+
+  .site-nav.open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-grid,
+  .fleet-grid,
+  .features-grid,
+  .stats-grid,
+  .clients-grid,
+  .testimonials,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
